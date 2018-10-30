@@ -1,5 +1,6 @@
 package tools.demo.test;
 
+import tools.demo.service.OneService;
 import tools.demo.utils.SpringUtil;
 
 import javax.jws.WebMethod;
@@ -9,14 +10,16 @@ import javax.xml.ws.Endpoint;
 @WebService
 public class WebTest {
     @WebMethod
-    public String login() {
-        TestService testService = (TestService) SpringUtil.getBean( "testService" );
+    public String login(String name) {
+       // TestService testService = (TestService) SpringUtil.getBean( "testService" );
+      // OneService oneService= (OneService) SpringUtil.getBean( "oneService" );
+        OneService oneService=   SpringUtil.getBean( "oneService" ,OneService.class);
         String result = "0";
         try {
             if (null == result) {
                 return result;
             }
-            result = testService.say();
+            result = oneService.getName( name );
         } catch (Exception e) {
             return "error";
         }
