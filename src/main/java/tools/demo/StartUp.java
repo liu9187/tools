@@ -7,14 +7,13 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import tools.demo.test.WebTest;
 
 import javax.xml.ws.Endpoint;
-@EnableConfigurationProperties
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+@SpringBootApplication
 public class StartUp {
 
     public static void main(String[] args) {
         SpringApplication.run( StartUp.class, args );
-        String address= "http://localhost:9900/PushMessage/sendOcuMessageToUsers";
-        Endpoint.publish( address,new WebTest());
+//        String address= "http://localhost:9900/PushMessage/sendOcuMessageToUsers";
+//        Endpoint.publish( address,new WebTest());
 
 
     }
