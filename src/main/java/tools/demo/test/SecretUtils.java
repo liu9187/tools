@@ -105,7 +105,7 @@ public class SecretUtils {
     public static void main(String[] args) throws IOException {
 
        //
-        FileInputStream fin=new FileInputStream( "application.properties" );
+        FileInputStream fin=new FileInputStream( "config/application.properties" );
         Properties properties=new Properties(  );
         properties.load( fin );
          String password=   properties.getProperty( "db.password" );
